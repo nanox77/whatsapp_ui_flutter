@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui_example/chat_summary_view_model.dart';
+import 'chat_summary_view_model.dart';
 
 class ChatSummaryView extends StatelessWidget {
   final Color textUnreadGreenColor = Color.fromARGB(255, 8, 211, 111);
@@ -62,7 +62,7 @@ class ChatSummaryView extends StatelessWidget {
     );
   }
 
-  Text buildTextTime() {
+  Widget buildTextTime() {
     return Text(
       chatSummaryViewModel.time,
       style: TextStyle(

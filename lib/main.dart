@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChatsView(
         title: 'WhatsApp',
-        chats: Chats().chatSummaryViewModels,
+        chatSummaryViewModel: Chats().chatSummaryViewModels,
       ),
     );
   }
@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
 
 class ChatsView extends StatelessWidget {
   final String title;
-  final List<ChatSummaryViewModel> chats;
+  final List<ChatSummaryViewModel> chatSummaryViewModel;
 
-  ChatsView({Key key, this.title, this.chats}) : super(key: key);
+  ChatsView({Key key, this.title, this.chatSummaryViewModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,10 +54,10 @@ class ChatsView extends StatelessWidget {
   Widget buildChatList() {
     return SafeArea(
       child: ListView.separated(
-        itemCount: chats.length,
+        itemCount: chatSummaryViewModel.length,
         separatorBuilder: (BuildContext context, int index) => buildDivider(),
         itemBuilder: (BuildContext context, int index) {
-          return ChatSummaryView(chats[index]);
+          return ChatSummaryView(chatSummaryViewModel[index]);
         },
       ),
     );
